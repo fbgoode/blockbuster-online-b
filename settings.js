@@ -7,14 +7,20 @@ module.exports = {
   // Environment-dependent settings
   development: {
     db: {
-      dialect: "mongo",
-      storage: "db/database.mongo"
+        host: process.env.MONGO_HOST || 'localhost',
+        port: process.env.MONGO_PORT || '27017',
+        dbname: process.env.MONGO_DBNAME || 'test',
+        user: process.env.MONGO_USER || null,
+        password: process.env.MONGO_PASSWORD || null
     }
   },
   production: {
     db: {
-      dialect: "mongo",
-      storage: "db/database.mongo"
+        host: process.env.MONGO_HOST || 'localhost',
+        port: process.env.MONGO_PORT || '27017',
+        dbname: process.env.MONGO_DBNAME || 'test',
+        user: process.env.MONGO_USER || null,
+        password: process.env.MONGO_PASSWORD || null
     }
   }
 };
