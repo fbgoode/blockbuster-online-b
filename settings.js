@@ -6,6 +6,10 @@ module.exports = {
 
   // Environment-dependent settings
   development: {
+    tmdb: {
+      apiUrl: process.env.TMDB_APIURL || 'https://api.themoviedb.org/3/movie/',
+      apiKey: process.env.TMDB_APIKEY || 'cac61624997edd865edf5c5c8caec2a2'
+    },
     db: {
         host: process.env.MONGO_HOST || 'localhost',
         port: process.env.MONGO_PORT || '27017',
@@ -15,6 +19,10 @@ module.exports = {
     }
   },
   production: {
+    tmdb: {
+      apiUrl: process.env.TMDB_APIURL || 'https://api.themoviedb.org/3/movie/',
+      apiKey: process.env.TMDB_APIKEY || 'cac61624997edd865edf5c5c8caec2a2'
+    },
     db: {
         host: process.env.MONGO_HOST || 'localhost',
         port: process.env.MONGO_PORT || '27017',

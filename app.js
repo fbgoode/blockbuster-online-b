@@ -5,6 +5,7 @@ const app = express();
 const Settings = require("./settings");
 const dbSettings = Settings[Settings.env].db;
 const routers = require('./lib/routers');
+Mongoose.set('useFindAndModify', false); // To solve deprecation issue
 
 // Exit on error if on development environment
 if (Settings.env == "development") process.on("unhandledRejection", err => {
