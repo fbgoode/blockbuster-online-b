@@ -22,7 +22,9 @@ for (let route in routers) {
 }
 
 // Connect to DB
-const dbpath = 'mongodb://'+((dbSettings.user)?`${dbSettings.user}:${dbSettings.password}@`:'')+`${dbSettings.host}:${dbSettings.port}/${dbSettings.dbname}`
+let port = (dbSettings.port)? ':'+dbSettings.port:'';
+const dbpath = dbSettings.pre+((dbSettings.user)?`${dbSettings.user}:${dbSettings.password}@`:'')
++`${dbSettings.host}${port}/${dbSettings.dbname}${dbSettings.query}`
 Mongoose.connect(dbpath, {useNewUrlParser: true, useUnifiedTopology: true});
 console.log(new Date,'Trying to connect to ' + dbpath);
 const db = Mongoose.connection;
