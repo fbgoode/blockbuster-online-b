@@ -30,8 +30,8 @@ module.exports = {
         host: process.env.MONGO_HOST || 'blockbuster-online.1kmjp.mongodb.net',
         port: process.env.MONGO_PORT || '',
         dbname: process.env.MONGO_DBNAME || 'bbo',
-        user: process.env.MONGO_USER || 'bbo-admin',
-        password: process.env.MONGO_PASSWORD || 'Fj-N8vBHtSA5Ajy',
+        user: process.env.MONGO_USER || null,
+        password: process.env.MONGO_PASSWORD || null,
         query: process.env.MONGO_QUERY || '?retryWrites=true&w=majority'
     }
   }
